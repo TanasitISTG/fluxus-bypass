@@ -27,7 +27,7 @@ const toast = useToast();
 const bypass = async () => {
     isBypassing.value = true;
     try {
-        const response = await $fetch(`http://localhost:3000/api/bypass?hwid=${hwid.value}`);
+        const response = await $fetch(`https://fluxus-bypass.vercel.app/api/bypass?hwid=${hwid.value}`);
         const openingIndex = response.indexOf('let content = ("');
         const closingIndex = response.indexOf(';', openingIndex);
         key.value = response.substring(openingIndex + 16, closingIndex - 2);
